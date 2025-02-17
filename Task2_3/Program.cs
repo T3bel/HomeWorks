@@ -1,20 +1,22 @@
-﻿namespace Task2_3
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Task2_3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите 4-х значное число");
-            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите длину в дюймах");
+            const double inch = 2.54;
+            double lenght = Convert.ToDouble(Console.ReadLine()) * inch;
 
-            int a = n / 1000;
-            int b = (n / 100) % 10;
-            int c = (n/10) % 10;
-            int d = n % 10;
-            int n2 = a*1000 + d*100 + c*10 + b;
+            int a = (int)(lenght / 100 % 100);
+            int b = (int)((lenght - a * 100));
+            double c = Math.Round((lenght - a * 100 - b) * 10, 1);
 
-            Console.WriteLine($"В числе поменялись местами 2-я и 4-я цифра: {n2}");
-            Console.ReadKey();
+            Console.WriteLine($"Длина в метрах {a}");
+            Console.WriteLine($"Длина в сантиметрах {b}");
+            Console.WriteLine($"Длина в милиметрах {c}");
         }
     }
 }

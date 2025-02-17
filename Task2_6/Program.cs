@@ -4,15 +4,12 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите длину трубы которую хотите округлить");
 
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
+            var pipeLenght = Convert.ToDouble(Console.ReadLine().Replace('.',','));
+            var roundPipeLenght = Math.Round(pipeLenght * 2) / 2;
 
-            a = a + b;
-            b = a - b;
-            a = a - b;  
-
-            Console.WriteLine($"a={a} , b={b}");
+            Console.WriteLine($"Округленная длина трубы {roundPipeLenght}м");
         }
     }
 }
