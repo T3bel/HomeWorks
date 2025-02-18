@@ -13,7 +13,7 @@
             Console.WriteLine("Введите секунды");
             int sec = Convert.ToInt32(Console.ReadLine());
 
-            var sumDegree = (degree + min / 60d + sec / 3600d);
+            var sumDegree = (degree + min / 60d + sec / 3600d)%360;
             var result = sumDegree * Math.PI / 180d;
 
             Console.WriteLine($"Угол в радианах равен: {result}");
