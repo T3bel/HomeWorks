@@ -9,20 +9,21 @@ namespace Task6_1
             var inputText = Console.ReadLine();
             var splitText = Regex.Split(inputText.Trim(),@"\s+");
 
-            Array.Sort(splitText);
-            Console.WriteLine(splitText[splitText.Length - 1]);
-            Console.ReadKey();
-            //for (int i = 0; i < splitText.Length; i++)
-            //{
-            //    if ( splitText[i].Length > maxLenght)
-            //    {
-            //        string value = "";
-            //        value += splitText[i];
-            //        maxLenght= splitText[i].Length;
-            //    }
+            for (int i = 0; i < splitText.Length - 1; i++)
+            {
+                for (int j = 0; j < splitText.Length - i - 1; j++)
+                {
+                    if (splitText[j].Length > splitText[j + 1].Length)
+                    {
+                        string value = splitText[j];
+                        splitText[j] = splitText[j + 1];
+                        splitText[j + 1] = value;
+                    }
+                }
+            }
 
-            //}
-           
+            Console.WriteLine($"Самое длинное слово: {splitText[splitText.Length - 1]}");
+            Console.ReadKey();
         }
     }
 }
