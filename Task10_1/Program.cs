@@ -70,7 +70,7 @@ namespace Task10_1
         }
 
     }
-    
+
     public class Building
     {
         protected private string _adress;
@@ -141,10 +141,9 @@ namespace Task10_1
         public override string DisplayInfo()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Адрес здания: {_adress}");
-            sb.AppendLine($"Площадь здания: {_area}");
+            sb.Append(base.DisplayInfo());
+
             sb.AppendLine($"Количество этажей: {_floors}");
-            sb.AppendLine($"Год подстройки: {_yearBuild}");
             sb.AppendLine($"Наличие лифта: {(_haveElevator ? "Есть" : "Отсутствует")}");
             return sb.ToString();
         }
