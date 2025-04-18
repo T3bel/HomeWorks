@@ -6,7 +6,7 @@ namespace Task11_1
     {
         static void Main(string[] args)
         {
-            Animal[] animals = new Animal[] 
+            Animal[] animals =
             {
                 new Dog(),
                 new Cat() 
