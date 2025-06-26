@@ -12,18 +12,18 @@
             Console.WriteLine($"Дубликат alice@example.com добавлен? {!subscribers.Add("alice@example.com")}");
             Console.WriteLine($"Дубликат bob@example.com добавлен? {!subscribers.Add("bob@example.com")}");
             Console.WriteLine($"Дубликат charlie@example.com добавлен? {!subscribers.Add("charlie@example.com")}");
-            
+
             Console.WriteLine($"Дубликат alice@example.com добавлен? {!subscribers.Add("alice@example.com")}");
 
             Console.WriteLine($"Есть ли bob@example.com в подписчиках? {subscribers.Contains("bob@example.com")}");
             Console.WriteLine($"Есть ли dave@example.com в подписчиках? {subscribers.Contains("dave@example.com")}");
 
             var newSubscribers = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
+            {
             "bob@example.com",
             "dave@example.com",
             "eve@example.com"
-        };
+            };
 
             subscribers.UnionWith(newSubscribers);
 
@@ -41,9 +41,9 @@
             }
 
             subscribers = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
+             {
             "alice@example.com", "bob@example.com", "charlie@example.com", "dave@example.com", "eve@example.com"
-        };
+             };
 
             Console.WriteLine($"Удалили charlie@example.com? {subscribers.Remove("charlie@example.com")}");
             Console.WriteLine($"Всего подписчиков: {subscribers.Count}");
